@@ -3,7 +3,7 @@ I am done with searching my previous codes and searching all repositories when n
 
 ## CSE 3Y2S :
   * [Operating System Lab](https://github.com/Nadim-Mahmud/Operating-System-Lab)
-  * [Assembly Lan Lab](https://github.com/Nadim-Mahmud/Assembly_Lab)
+  * [Assembly Lab](https://github.com/Nadim-Mahmud/Assembly_Lab)
   * [Computer Graphics](https://github.com/Nadim-Mahmud/Computer-Graphics)
   * [Networking Lab]
 ## CSE 3Y1S :
