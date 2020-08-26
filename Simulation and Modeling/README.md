@@ -1,2 +1,2 @@
 ## Topics:
-  * pure persuit problem
+  * pure pursuit problem
