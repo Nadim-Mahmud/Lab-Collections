@@ -83,6 +83,7 @@ int main(){
     if(total>=1.73 && total <= 23.6) puts("Result : ACCEPTED");
     else puts("Result : NOT ACCEPTED");
 
+    filein.close();
 
     return 0;
 }
