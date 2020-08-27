@@ -4,6 +4,8 @@ using namespace std;
 int main(){
     int x,a,c,m,i,n=100;
 
+    puts("Enter seed multiplier increamenter and mod :");
+
     freopen("Linear_congruential_method.txt","w",stdout);
 
     cin>>x>>a>>c>>m;
