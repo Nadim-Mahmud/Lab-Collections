@@ -1,2 +1,3 @@
 ## Topics:
-  * pure pursuit problem
+  * Pure pursuit problem
+  * Simulation of a chemical reactor
