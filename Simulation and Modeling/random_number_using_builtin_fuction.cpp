@@ -6,6 +6,7 @@ int main(){
 
     freopen("random_number_using_builtin_fuction.txt","w",stdout);
 
+    puts("Enter number of random number and mod")
     cin>>n>>m;
 
     for(i=0;i<=n;i++){
