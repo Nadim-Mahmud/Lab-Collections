@@ -50,7 +50,7 @@ int main(){
     mr = -1;
     mean_middle = ((double)m-1.0+0)/2.0;
 
-    //freopen("run_test.txt","w",stdout);
+    freopen("run_test.txt","w",stdout);
 
     for(i=1;i<=n;i++){
         filein>>numbers[i];
@@ -76,6 +76,8 @@ int main(){
 
 
     puts("\n\n");
+    cout<<"Above from the mean : "<<n1<<endl;
+    cout<<"Below from the mean : "<<n2<<endl;
     cout<<"Middle position mean : "<<mean_middle<<endl;
     cout<<"Total numbers : "<<n<<endl;
     cout<<"Number of runs : "<<runs<<endl;
