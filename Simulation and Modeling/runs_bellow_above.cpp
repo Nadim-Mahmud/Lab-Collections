@@ -76,6 +76,7 @@ int main(){
 
 
     puts("\n\n");
+    cout<<"Middle position mean : "<<mean_middle<<endl;
     cout<<"Total numbers : "<<n<<endl;
     cout<<"Number of runs : "<<runs<<endl;
     cout<<"Mean : "<<mean<<endl;
