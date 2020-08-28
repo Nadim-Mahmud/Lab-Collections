@@ -60,7 +60,6 @@ int main(){
     setcolor(15);
     line((inc+posx)*fct, 0, (inc+posx)*fct, getmaxy());
     line(0, getmaxy() - (inc+posy)*fct, getmaxx(), getmaxy() - (inc+posy)*fct);
-    cout<<(inc+posy)*fct<<endl;
 
     posx = posx+inc;
     posy = posy+inc;
