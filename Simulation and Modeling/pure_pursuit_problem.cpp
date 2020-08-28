@@ -50,7 +50,7 @@ int main(){
         //return 0;
     }
 
-    //Plotting the graph
+    ///Plotting the graph
 
     /***
         * in graphics.h (0,0) position is in upper left corner and
@@ -64,9 +64,18 @@ int main(){
     **/
 
 
-    int fct = 3;
-    posx = -1*posx+5;
-    posy = -1*posy+5;
+    int fct = 3,inc = 5; ///inc for padding space side and down
+    int ymx = getmaxy();
+    posx = abs(posx);
+    posy = abs(posy);
+
+    setcolor(2);
+    line((inc+posx)*fct, 0, (inc+posx)*fct, getmaxy());
+    line(0, getmaxy() - (inc+posy)*fct, getmaxx(), getmaxy() - (inc+posy)*fct);
+    cout<<(inc+posy)*fct<<endl;
+
+    posx = posx+inc;
+    posy = posy+inc;
 
     bx[0] = (bx[0]+posx)*fct;
     by[0] = (by[0]+posy)*fct;
@@ -82,11 +91,11 @@ int main(){
         fy[i] = (fy[i]+posy)*fct;
 
         setcolor(15);
-        line(bx[i-1], by[i-1], bx[i], by[i]);
+        line(bx[i-1], ymx - by[i-1], bx[i], ymx - by[i]);
         delay(50);
 
-        setcolor(14);
-        line(fx[i-1], fy[i-1], fx[i], fy[i]);
+        setcolor(4);
+        line(fx[i-1], ymx - fy[i-1], fx[i], ymx - fy[i]);
         delay(50);
     }
 
