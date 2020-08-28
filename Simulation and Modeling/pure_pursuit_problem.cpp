@@ -52,24 +52,12 @@ int main(){
 
     ///Plotting the graph
 
-    /***
-        * in graphics.h (0,0) position is in upper left corner and
-          lower right corner is the highest point so the direction
-          will seem to opposite than normal graph.
-
-        * there is no way to plot negative value on this plot so i have
-          adjusted the negative value by adding positive value "posx,posy"
-          with the normal point and multiplied the points to make the graph
-          more visiable
-    **/
-
-
     int fct = 3,inc = 5; ///inc for padding space side and down
     int ymx = getmaxy();
     posx = abs(posx);
     posy = abs(posy);
 
-    setcolor(2);
+    setcolor(15);
     line((inc+posx)*fct, 0, (inc+posx)*fct, getmaxy());
     line(0, getmaxy() - (inc+posy)*fct, getmaxx(), getmaxy() - (inc+posy)*fct);
     cout<<(inc+posy)*fct<<endl;
@@ -90,11 +78,11 @@ int main(){
         fx[i] = (fx[i]+posx)*fct;
         fy[i] = (fy[i]+posy)*fct;
 
-        setcolor(15);
+        setcolor(4);
         line(bx[i-1], ymx - by[i-1], bx[i], ymx - by[i]);
         delay(50);
 
-        setcolor(4);
+        setcolor(2);
         line(fx[i-1], ymx - fy[i-1], fx[i], ymx - fy[i]);
         delay(50);
     }
