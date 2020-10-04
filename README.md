@@ -1,5 +1,4 @@
-# Collection of all of my lab codes
-I am done with searching my previous codes and searching all repositories when needs. Now i am gathering the link of all of my lab task in one repository.
+# Collection of all of my lab codes :
 ## CSE 4Y1S :
   * [Simulation Modeling](https://github.com/Nadim-Mahmud/Lab-Collections/tree/master/Simulation%20and%20Modeling)
 ## CSE 3Y2S :
