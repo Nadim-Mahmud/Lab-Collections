@@ -34,7 +34,7 @@ int main(void) {
 
     cout<<"end of -----> "<<my_rank<<endl;
 
-    cout<<MPI_COMM_WORLD<<endl;
+    //cout<<MPI_COMM_WORLD<<endl;
 
     MPI_Finalize();
     return 0;
