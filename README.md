@@ -1,6 +1,7 @@
 # Collection of all of my lab codes :
 ## CSE 4Y1S :
   * [Simulation Modeling](https://github.com/Nadim-Mahmud/Lab-Collections/tree/master/Simulation%20and%20Modeling)
+  * [Parrallel Processing](https://github.com/Nadim-Mahmud/Lab-Collections/tree/master/Parallal%20processing)
 ## CSE 3Y2S :
   * [Operating System Lab](https://github.com/Nadim-Mahmud/Operating-System-Lab)
   * [Assembly Lab](https://github.com/Nadim-Mahmud/Assembly_Lab)
