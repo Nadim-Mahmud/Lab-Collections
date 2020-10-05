@@ -20,7 +20,7 @@ int main(){
     MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
     /*new_comm contains new communication sub world*/
-    color = my_rank%2; //splitting acoording to odd and even
+    color = my_rank%2; //splitting acoording to odd and even.... different colour means different set of groups 
 
     MPI_Comm_split(MPI_COMM_WORLD, color,my_rank,&new_comm);
     
