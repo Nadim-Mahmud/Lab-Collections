@@ -4,7 +4,7 @@ using namespace std;
 
 
 double func(double x){
-    return x*x*x;
+    return x*x;
 }
 
 double trapizoid(double left_end, double right_end, int trap_count, double height){
@@ -22,26 +22,34 @@ double trapizoid(double left_end, double right_end, int trap_count, double heigh
     return segment_area;
 }
 
+
 int main(){
-    int my_rank, comm_sz, n = 420000000, local_n;
-    double a = 0.0, b = 3.00, height, local_left_point, local_right_point,total_area,local_area;
+    int my_rank, comm_sz, n, local_n;
+    double a, b, height, local_left_point, local_right_point,total_area,local_area;
     int source; 
 
     MPI_Init(NULL,NULL);
     MPI_Comm_size(MPI_COMM_WORLD, &comm_sz);
     MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
+   //input with broadcast 
+    if(my_rank==0){
+        puts("Input number of process, starting point, ending point :");
+        scanf("%d %lf %lf",&n,&a,&b);
+    }
+    MPI_Bcast( &n , 1 , MPI_INT , 0 , MPI_COMM_WORLD);
+    MPI_Bcast( &a , 1 , MPI_DOUBLE , 0 , MPI_COMM_WORLD);
+    MPI_Bcast( &b , 1 , MPI_DOUBLE , 0 , MPI_COMM_WORLD);
+
+
     height = (b-a)/(double)n;
     
     local_n = n/comm_sz;
     local_left_point = a + my_rank*local_n*height;
-
     if(my_rank == comm_sz-1 && n%comm_sz != 0){
         local_n = n % comm_sz;  // while number of iteration is not divided by the process
     }
-
     local_right_point = local_left_point + local_n*height;
-
     local_area = trapizoid(local_left_point,local_right_point,local_n,height);
    
     //cout<<my_rank<<endl;

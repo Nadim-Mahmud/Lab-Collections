@@ -4,7 +4,7 @@ using namespace std;
 
 
 double func(double x){
-    return x*x*x;
+    return x*x;
 }
 
 double trapizoid(double left_end, double right_end, int trap_count, double height){
@@ -12,7 +12,7 @@ double trapizoid(double left_end, double right_end, int trap_count, double heigh
     double segment_area,tmp;
     int i;
     /*calculating area of trapizoid of two end point*/
-   // cout<<"start - ";
+    // cout<<"start - ";
     segment_area = (func(left_end) + func(right_end))/2.0;
     for(i=1; i < trap_count; i++){
         segment_area += func(left_end + i*height);
@@ -45,12 +45,12 @@ int main(){
     local_area = trapizoid(local_left_point,local_right_point,local_n,height);
    
     //cout<<my_rank<<endl;
-    MPI_Reduce(&local_area, &total_area, 1, MPI_DOUBLE, MPI_SUM, 0,MPI_COMM_WORLD);
+    MPI_Allreduce(&local_area, &total_area, 1, MPI_DOUBLE, MPI_SUM,MPI_COMM_WORLD);
 
         //printing output
 
-    if(my_rank==0)
-        printf("With n = %d trapezoids, Our estimate of the integral from %f to %f = %.20f \n", n, a, b, total_area); 
+    if(my_rank==2)
+         printf("from process %d, Our estimate of the integral = %.20f \n", my_rank,total_area); 
 
     MPI_Finalize();
     return 0;
