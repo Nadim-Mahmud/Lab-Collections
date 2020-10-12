@@ -32,7 +32,7 @@ int main(){
     MPI_Comm_size(MPI_COMM_WORLD, &comm_sz);
     MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
-   //input with broadcast 
+   //input then bcast the data to all process
     if(my_rank==0){
         puts("Input number of process, starting point, ending point :");
         scanf("%d %lf %lf",&n,&a,&b);

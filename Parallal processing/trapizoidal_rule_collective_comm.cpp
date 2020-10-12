@@ -45,6 +45,7 @@ int main(){
     local_area = trapizoid(local_left_point,local_right_point,local_n,height);
    
     //cout<<my_rank<<endl;
+    /*send data to all process calculate in logn then retrive data to p0*/
     MPI_Reduce(&local_area, &total_area, 1, MPI_DOUBLE, MPI_SUM, 0,MPI_COMM_WORLD);
 
         //printing output

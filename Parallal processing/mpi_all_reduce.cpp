@@ -45,6 +45,7 @@ int main(){
     local_area = trapizoid(local_left_point,local_right_point,local_n,height);
    
     //cout<<my_rank<<endl;
+    //calculate the with butterfly structure so all process have the result at the end
     MPI_Allreduce(&local_area, &total_area, 1, MPI_DOUBLE, MPI_SUM,MPI_COMM_WORLD);
 
         //printing output
