@@ -11,7 +11,7 @@ using namespace std;
 int main(void) {
     int comm_sz;
     int my_rank;
-    ll total_elements=100000000,elements_perpro;
+    ll total_elements=1000000,elements_perpro;
 
     int n = MPI_Init(NULL, NULL);
     MPI_Comm_size(MPI_COMM_WORLD, &comm_sz);
@@ -40,19 +40,17 @@ int main(void) {
     avg /= (long double)total_elements;
     //cout<<my_rank<<" "<<avg<<endl;
 
-    long double *collect_avg = NULL;
-    if(my_rank==0){
-        collect_avg = (long double*)malloc(sizeof(long double)*comm_sz);
-    }
-        
-    MPI_Gather(&avg, 1, MPI_LONG_DOUBLE, collect_avg, 1, MPI_LONG_DOUBLE, 0, MPI_COMM_WORLD);
     
-    if(my_rank==0){
+    long double * collect_avg = (long double*)malloc(sizeof(long double)*comm_sz);
+        
+    MPI_Allgather(&avg, 1, MPI_LONG_DOUBLE, collect_avg, 1, MPI_LONG_DOUBLE, MPI_COMM_WORLD);
+    
+    if(my_rank==1){
         long double sum = 0;
         for(int i=0; i<comm_sz; i++){
             sum += collect_avg[i];
         }
-        printf("Total average - %Lf\n",sum);
+        printf("Total average - %Lf from rank %d\n",sum,my_rank);
     }
     
     free(collect_avg);
