@@ -42,7 +42,8 @@ int main(void) {
 
     
     long double * collect_avg = (long double*)malloc(sizeof(long double)*comm_sz);
-        
+    
+    //gather all array block to every process...
     MPI_Allgather(&avg, 1, MPI_LONG_DOUBLE, collect_avg, 1, MPI_LONG_DOUBLE, MPI_COMM_WORLD);
     
     if(my_rank==1){
