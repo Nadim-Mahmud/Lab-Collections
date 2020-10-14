@@ -9,7 +9,7 @@ using namespace std;
 int main(void) {
     int comm_sz;
     int my_rank;
-    int n=8,local_n;
+    int n=5,local_n;
 
     MPI_Init(NULL, NULL);
     MPI_Comm_size(MPI_COMM_WORLD, &comm_sz);
@@ -17,7 +17,7 @@ int main(void) {
 
     vector<ll>arr;
     if(my_rank==0){
-        arr = {0,1,2,3,4,5,6,7};
+        arr = {0,1,2,3,4};
     }
 
     int send_count[comm_sz];
