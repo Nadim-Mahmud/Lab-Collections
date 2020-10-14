@@ -11,7 +11,10 @@ using namespace std;
 int main(void) {
     int comm_sz;
     int my_rank;
-    ll total_elements=100000000,elements_perpro;
+    ll total_elements=1000000,elements_perpro;
+
+    double start,end;
+    start = MPI_Wtime();
 
     int n = MPI_Init(NULL, NULL);
     MPI_Comm_size(MPI_COMM_WORLD, &comm_sz);
@@ -55,6 +58,10 @@ int main(void) {
         printf("Total average - %Lf\n",sum);
     }
     
+    end = MPI_Wtime();
+
+    printf("rank %d need %lf time\n",my_rank,end-start);
+
     free(collect_avg);
     free(rand_n);
     free(local_rand);
