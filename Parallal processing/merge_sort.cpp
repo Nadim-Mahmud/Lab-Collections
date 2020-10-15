@@ -37,7 +37,7 @@ int main(void) {
 
     MPI_Scatter(arr.data(), local_n, MPI_LONG_LONG, local_arr, local_n, MPI_LONG_LONG, 0, MPI_COMM_WORLD);
 
-    // ---------------------sorting part-------------------------------------
+    // ---------------------sorting part------------------------------------
     
     sort(local_arr,local_arr+local_n);
 
@@ -69,7 +69,7 @@ int main(void) {
             //cout<<local_arr[0]<<" "<<local_arr[1]<<" "<<my_rank+mid<<" "<<my_rank<<endl;
             compare_and_store(local_arr, tmp, (curr_sz+ext), curr_sz);
            // cout<<local_arr[0]<<" "<<local_arr[1]<<" "<<my_rank+mid<<" "<<my_rank<<endl;
-           
+
             if(mark_ext){
                 
                 local_arr = (ll*)realloc(local_arr, sizeof(ll)*(3*curr_sz+ext));
