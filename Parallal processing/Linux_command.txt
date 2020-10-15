@@ -4,3 +4,5 @@ mpicc mpi.c -o mpi.o --> compile a c file
 mpiCC mpi.cpp -o mpi.o --> compile a cpp file
 
 mpirun -np 4 ./mpi.o --> run a output file
+
+ppr
