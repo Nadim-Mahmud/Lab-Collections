@@ -9,13 +9,6 @@ long n,flag;
 double sum;
 long long my_n;
 
-void setaffinity(int cpu_name){
-    cpu_set_t set;
-    CPU_ZERO(&set);        // clear cpu mask
-    CPU_SET(cpu_name, &set);      // set cpu 0
-    sched_setaffinity(0, sizeof(cpu_set_t), &set);  // 0 is the calling process
-}
-
 
 void* Thread_sum(void* rank){
 
@@ -26,7 +19,6 @@ void* Thread_sum(void* rank){
     long long my_last_i = my_first_i+my_n;
     double local_sum = 0.0;
 
-    setaffinity(my_rank%4);
 
     if(my_first_i%2==0){
         factor=1.0;
@@ -43,7 +35,7 @@ void* Thread_sum(void* rank){
     sum+=local_sum;
     flag=(flag+1)%thread_count;
 
-    printf("thread : %d  cpu: %d\n",my_rank,sched_getcpu());
+    //printf("thread : %d  cpu: %d\n",my_rank,sched_getcpu());
 
     return NULL;
 }
