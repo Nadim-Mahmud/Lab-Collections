@@ -14,6 +14,12 @@ long long my_n;
 
 pthread_mutex_t mutex_variable;
 
+void setaffinity(int cpu_name){
+    cpu_set_t set;
+    CPU_ZERO(&set);        // clear cpu mask
+    CPU_SET(cpu_name, &set);      // cpu_name set cpu 
+    sched_setaffinity(0, sizeof(cpu_set_t), &set);  // cpu_name is the calling process
+}
 
 
 void* Thread_sum(void* rank){
@@ -25,6 +31,7 @@ void* Thread_sum(void* rank){
     long long my_last_i = my_first_i+my_n;
     double local_sum = 0.0;
 
+    setaffinity(my_rank%4);
 
     if(my_first_i%2==0){
         factor=1.0;
@@ -41,6 +48,7 @@ void* Thread_sum(void* rank){
     sum+=local_sum;
     pthread_mutex_unlock(&mutex_variable);
 
+    printf("thread : %d  cpu: %d\n",my_rank,sched_getcpu());
 
     return NULL;
 }
