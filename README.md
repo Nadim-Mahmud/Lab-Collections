@@ -3,6 +3,7 @@
   * [Simulation Modeling](https://github.com/Nadim-Mahmud/Lab-Collections/tree/master/Simulation%20and%20Modeling)
   * [Parrallel Processing](https://github.com/Nadim-Mahmud/Lab-Collections/tree/master/Parallal%20processing)
   * [Digital Image Processing](https://github.com/Nadim-Mahmud/Digital-Image-Processing)
+  * [Computer Peripherals and Interfacing](https://github.com/Nadim-Mahmud/Lab-Collections/tree/master/Computer%20Peripherals%20and%20Interfacing)
 ## CSE 3Y2S :
   * [Operating System Lab](https://github.com/Nadim-Mahmud/Operating-System-Lab)
   * [Assembly Lab](https://github.com/Nadim-Mahmud/Assembly_Lab)
