@@ -45,6 +45,7 @@ int main(){
 
     // using senders arr size on both side
     MPI_Gather(&local_ans, 1, MPI_INT, ans, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    //MPI_Allgather(&local_ans, 1, MPI_INT, ans, 1, MPI_INT, MPI_COMM_WORLD);
 
     if(my_rank == 0){
         for(int i = 0; i < m; i++){
