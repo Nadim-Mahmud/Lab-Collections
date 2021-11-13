@@ -30,11 +30,10 @@ int main(int argc, char * argv[]){
 
 
     // this pragma is a pre processor which will start openmp code if we don't put this , then the programm will run as a seial code of cpp
-    # pragma omp parallel num_threads(thread_count) \
+    # pragma omp parallel for num_threads(thread_count) \
         reduction(+ : total_area) 
-    for(i = 1; i <= n-1 ; i++){
+    for(i = 1; i <= n-1 ; i++)
         total_area += func( a + h*i);
-    }
     total_area *= h;
 
     cout<<"total area = "<<total_area<<endl;
