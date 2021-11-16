@@ -6,4 +6,5 @@
   * Test of the uniformity property of some generated random numbers
   * (Runs Up-Down) Test of the independence property of some generated random numbers
   * (Runs Above-Below) Test of the independence property of some generated random numbers
+  * PERT critical path calculations
 
