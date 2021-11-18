@@ -50,7 +50,7 @@ int main(){
     mr = -1;
     mean_middle = ((double)m-1.0+0)/2.0;
 
-    freopen("run_test.txt","w",stdout);
+    //freopen("run_test.txt","w",stdout);
 
     for(i=1;i<=n;i++){
         filein>>numbers[i];
@@ -60,15 +60,19 @@ int main(){
     for(i=1;i<n;i++){
         if(numbers[i]>mean_middle){
             cout<<'+'<<" ";
-            if(mr!=1) runs++,n1++;
+            if(mr!=1) runs++;
+            n1 ++;
             mr = 1;
         }
         else{
             cout<<'-'<<" ";
-            if(mr!=0) runs++,n2++;
+            if(mr!=0) runs++;
+            //n2++;
             mr = 0;
         }
     }
+
+    n2 = (n-n1);
 
     mean = 2*n1*n2/n + .5;
     variance = 2*n1*n2*(2*n1*n2 - n)/n*n*(n-1);
