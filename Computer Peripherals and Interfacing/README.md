@@ -1,7 +1,7 @@
 # MDA dot matrix:
 
 Think each LED as 3 leg LED. 8255's port C is conected with each column starting from 7 to 0 (Left - Right) and port A and B conected as 7 to 0 (Top - Bottom). 
-LED are common anode LED. Prot A responsible for green and port B is responsible for green light. To light up a specific point of that matrix we should keep 
+LED are common anode LED. Prot A responsible for green and port B is responsible for red light. To light up a specific point of that matrix we should keep 
 C of that column (1)(Common Anode) and if red light then rows(A = 1, B = 0) and if green light then rows(A = 0, B = 1) { 0 = ON, 1 = OFF}
  
 
