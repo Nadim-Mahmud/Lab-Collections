@@ -7,7 +7,7 @@ C of that column (1)(Common Anode) and if red light then rows(A = 1, B = 0) and 
 
 # MDA LED:
 
-To light up a LED we should output this pattern (11110001) to port A. Here (4)MSB should always keep 1. Then from LSB each positions bit (1) lights up that specific
+To light up a LED we should output this pattern (11110001) to port A. Here 4-MSB should always keep 1. Then from LSB each positions bit (1) lights up that specific
 LED from 0-3. Check it out by setting different 1 combinition with the trial and error for understanding the 4 LED sequence.
 
 # MDA Seven Segment:
