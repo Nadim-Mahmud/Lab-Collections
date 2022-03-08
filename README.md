@@ -2,6 +2,7 @@
 ## CSE 4Y2S :
   * [Multimedia Lab](https://github.com/Nadim-Mahmud/Multimedia-Lab)
   * [Cryptography Lab](https://github.com/Nadim-Mahmud/Cryptography-Lab)
+  * [Artificial Intelligence](https://github.com/Nadim-Mahmud/Artificial-Intelligence-Lab)
 ## CSE 4Y1S :
   * [Simulation Modeling](https://github.com/Nadim-Mahmud/Lab-Collections/tree/master/Simulation%20and%20Modeling)
   * [Parrallel Processing](https://github.com/Nadim-Mahmud/Lab-Collections/tree/master/Parallal%20processing)
